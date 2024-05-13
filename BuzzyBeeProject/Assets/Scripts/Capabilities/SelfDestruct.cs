@@ -6,6 +6,11 @@ public class SelfDestruct : MonoBehaviour
 {
     private void OnBecameInvisible()
     {
+        Die();
+    }
+
+    public void Die()
+    {
         Destroy(gameObject);
     }
 }

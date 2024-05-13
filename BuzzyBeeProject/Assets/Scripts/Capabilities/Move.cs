@@ -23,11 +23,6 @@ public class Move : MonoBehaviour
         _direction.x = _inputManager.Controller.RetrieveHorizontalInput();
         _direction.y = _inputManager.Controller.RetrieveVerticalInput();
         _desiredVelocity = new Vector2(_direction.x, _direction.y) * Mathf.Max(_maxSpeed, 0f);
-
-        if (!_inputManager.Bounds.InBounds(_rigidBody2D))
-        {
-            _desiredVelocity.x = 0f;
-        }
     }
 
     private void FixedUpdate()

@@ -6,12 +6,11 @@ public class DealDamage : MonoBehaviour
 {
     [SerializeField]
     private int _damage;
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out HealthScript health))
         {
             health.DealDamage(_damage);
-            Destroy(gameObject);
         }
     }
 }

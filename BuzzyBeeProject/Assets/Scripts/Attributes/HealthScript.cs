@@ -16,5 +16,9 @@ public class HealthScript : MonoBehaviour
     public void DealDamage(int damage)
     {
         Health -= damage;
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
